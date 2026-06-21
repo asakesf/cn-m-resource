@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐鱼体育 · 运动生活志</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #f2f4f7;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+        }
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 20px 24px;
+        }
+
+        /* ----- hero 横幅 ----- */
+        .hero {
+            background: linear-gradient(135deg, #d9e2ec 0%, #e8edf3 100%);
+            border-radius: 24px;
+            padding: 52px 40px 44px;
+            margin-bottom: 48px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+            border: 1px solid rgba(255,255,255,0.4);
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 350;
+            letter-spacing: 2px;
+            color: #1f2a38;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #1f3a4b, #3a5d73);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #4a5b6b;
+            border-top: 1px solid rgba(60,80,100,0.15);
+            padding-top: 14px;
+            max-width: 520px;
+            margin: 0 auto;
+            font-weight: 350;
+        }
+
+        /* ----- 背景说明卡片 ----- */
+        .bg-note {
+            background: #ffffffdd;
+            backdrop-filter: blur(4px);
+            border-radius: 20px;
+            padding: 28px 32px;
+            margin-bottom: 36px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+        .bg-note .badge {
+            background: #dce3ec;
+            border-radius: 30px;
+            padding: 6px 18px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #2a4055;
+            letter-spacing: 0.8px;
+            border: 1px solid #cdd7e2;
+            white-space: nowrap;
+        }
+        .bg-note p {
+            flex: 1;
+            min-width: 200px;
+            color: #334455;
+            font-size: 1rem;
+        }
+
+        /* ----- 三段自然介绍卡片 ----- */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 28px;
+            margin-bottom: 44px;
+        }
+        @media (min-width: 640px) {
+            .card-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (min-width: 900px) {
+            .card-grid { grid-template-columns: 1fr 1fr 1fr; }
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 26px 24px 28px;
+            border: 1px solid #e0e6ee;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s ease;
+        }
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+        }
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 450;
+            color: #1f364a;
+            margin-bottom: 14px;
+            border-left: 4px solid #7f9bb3;
+            padding-left: 16px;
+            letter-spacing: 0.5px;
+        }
+        .card p {
+            color: #3f5368;
+            font-size: 0.96rem;
+        }
+
+        /* ----- 页尾访问提示 ----- */
+        .footer-cta {
+            background: #e6ecf3;
+            border-radius: 24px;
+            padding: 32px 32px 36px;
+            text-align: center;
+            border: 1px solid #d3dee9;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            margin-bottom: 16px;
+        }
+        .footer-cta p {
+            font-size: 1.05rem;
+            color: #2a4057;
+            max-width: 560px;
+            margin: 0 auto 8px;
+            font-weight: 380;
+        }
+        .footer-cta .link-wrapper {
+            margin-top: 14px;
+        }
+        .footer-cta a {
+            display: inline-block;
+            background: #2c4a64;
+            color: #f0f5fb;
+            text-decoration: none;
+            padding: 12px 38px;
+            border-radius: 40px;
+            font-size: 1.1rem;
+            font-weight: 420;
+            letter-spacing: 1px;
+            border: 1px solid #1f364a;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 8px rgba(0,20,30,0.06);
+        }
+        .footer-cta a:hover {
+            background: #1f3a50;
+            transform: scale(0.98);
+        }
+        .footer-meta {
+            text-align: center;
+            font-size: 0.82rem;
+            color: #73879b;
+            padding: 16px 0 10px;
+            border-top: 1px solid #d5dee8;
+            margin-top: 6px;
+        }
+        .footer-meta span {
+            margin: 0 6px;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 480px) {
+            .hero { padding: 36px 20px; }
+            .hero h1 { font-size: 2rem; }
+            .bg-note { padding: 22px; }
+            .card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero 横幅 -->
+    <div class="hero">
+        <h1>乐鱼体育 · 运动生活</h1>
+        <div class="sub">日常的节奏里，运动与热爱从不缺席</div>
+    </div>
+
+    <!-- 背景说明 -->
+    <div class="bg-note">
+        <span class="badge">背景 · 初衷</span>
+        <p>当谈论体育时，我们常常想起激烈对抗与极限时刻，但运动其实也可以是一段轻松的散步、一场傍晚的球局、或一次舒展的拉伸。<a href="https://cn-m-leyusports.com.cn" style="color: #2a5a78; text-decoration: underline; text-underline-offset: 3px; font-weight: 500;">乐鱼体育</a>更愿意把体育看作一种陪伴，它融入日常，安静地支撑着我们的活力与情绪。</p>
+    </div>
+
+    <!-- 三段自然介绍卡片 -->
+    <div class="card-grid">
+        <div class="card">
+            <h3>🏃 不只是竞技</h3>
+            <p>从清晨的慢跑到周末的户外骑行，体育从来不局限于赛场。许多人因为喜欢一支球队而开始运动，也有人因为想放松心情而拿起球拍。乐鱼体育关注这些细小的出发点——可能是一次集体观赛，也可能是一个人的投篮练习，它们都是体育真实的样子。</p>
+        </div>
+        <div class="card">
+            <h3>⚽ 生活中的连接</h3>
+            <p>我们和朋友们聊战术、分享训练视频，也常常因为某个精彩的回合而欢呼。运动提供了一种共同语言，让不同背景的人能轻松地聚在一起。乐鱼体育希望成为这种连接的背景板，不夸张，不打扰，只是提供一个可以浏览、交流、获取灵感的空间。</p>
+        </div>
+        <div class="card">
+            <h3>🎯 保持节奏，自然进步</h3>
+            <p>不需要成为专业选手也能享受运动的乐趣。关键在于找到适合自己的节奏，并持续下去。乐鱼体育的内容方向也遵循这个理念：提供实用的运动常识、比赛资讯以及轻松的氛围，帮助你在忙碌的生活里依旧保持一份对体育的好奇与热情。</p>
+        </div>
+    </div>
+
+    <!-- 页尾访问提示（内嵌链接） -->
+    <div class="footer-cta">
+        <p>无论你是经验丰富的运动爱好者，还是刚刚开始寻找感兴趣的项目，都欢迎来<a href="https://cn-m-leyusports.com.cn" style="color: #1f3a50; text-decoration: underline; text-underline-offset: 3px; font-weight: 500;">乐鱼体育</a>看看。这里没有复杂的门槛，只有体育本身散发的自然吸引力。</p>
+        <div class="link-wrapper">
+            <a href="https://cn-m-leyusports.com.cn">乐鱼体育</a>
+        </div>
+        <p style="margin-top: 16px; font-size: 0.9rem; color: #4a627a;">偶尔翻开，或许就会发现下一个让自己动起来的理由。</p>
+    </div>
+
+    <!-- 小巧 FAQ 摘要 / 补充 -->
+    <div style="background: #f7f9fc; border-radius: 18px; padding: 18px 24px; margin: 8px 0 20px; border: 1px solid #e4eaf2; font-size: 0.9rem; color: #3a4f62;">
+        <span style="font-weight: 450;">🔹 常见问题摘要</span>  –  体育资讯更新频率？主要覆盖足球、篮球、户外及生活化运动内容。所有信息力求真实，不做虚假承诺。
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer-meta">
+        <span>乐鱼体育 · 运动生活志</span>
+        <span>|</span>
+        <span>基于兴趣与真实内容</span>
+    </div>
+
+</div>
+</body>
+</html>
